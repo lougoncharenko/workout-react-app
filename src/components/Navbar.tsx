@@ -3,6 +3,9 @@ export default function Navbar() {
         <a href="/" className="site-title"> Elite Fitness +  </a>
         <ul>
             <li>
+            <a href="/"> Home</a>
+            </li>
+            <li>
                 <a href="/workouts"> Log your workout </a>
             </li>
             <li>
