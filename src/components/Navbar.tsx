@@ -4,9 +4,10 @@ export default function Navbar() {
         <ul>
             <li>
                 <a href="/workouts"> Log your workout </a>
+            </li>
+            <li>
                 <a href="/articles"> Fitness Articles </a>
             </li>
         </ul>
-
     </nav>
 }
