@@ -1,5 +1,14 @@
 import React from 'react';
+import '../styles/home.css'
 
 export default function Home() {
-    return <h1>Home</h1>
+    return (
+     <div>
+      <div className='cover-photo'>
+        {/* cover image goes here */}
+      </div>
+
+    </div> 
+    )
+  
   }
