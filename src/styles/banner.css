@@ -1,0 +1,4 @@
+.bannercontainer {
+    display: flex;
+    flex-direction: row;
+}
