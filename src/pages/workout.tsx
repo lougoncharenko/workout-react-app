@@ -1,5 +1,8 @@
 import React from 'react';
+import SearchExercises from '../components/searchExercises';
 
 export default function Workout() {
-    return <h1>Workout Logger</h1>
+    return (
+      <SearchExercises />
+    )
   }
