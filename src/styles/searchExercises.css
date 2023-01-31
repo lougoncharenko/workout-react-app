@@ -1,0 +1,34 @@
+.search-container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.heading {
+    font-size: calc(2rem + 3vw);
+    font-weight: bold;
+}
+
+.text-field-container {
+    margin-top:20px;
+    display: flex;
+    flex-direction: row;
+}
+
+input {
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 10px;
+    width: calc(10rem + 15vw);
+}
+
+button {
+    margin-left: 10px;
+    background-color: darkred;
+    color: white;
+    border: none;
+    border-radius: 20px;
+}
+
