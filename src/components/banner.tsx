@@ -23,15 +23,20 @@ import '../styles/banner.css'
   const HomeImage = () => {
     return (
         <div className='bannercontainer'>
-            <div>
-                <h2>
-                Sweat, Smile <br />
-                And Repeat
-                </h2>
-            </div>
-            <div>
-                <p> Check out the most effective exercises personalized to you</p>
-            </div>
+            <section className='column-one'>
+                <div className='motto'>
+                    Train Harder <br />
+                    Than Last Time.
+                </div>
+                <div className='caption'>
+                    <p> Click the button below to check out the most effective exercises personalized to you</p>
+                </div> 
+                <div className='button-holder'>
+                    <button> Explore Exerscises</button>
+                </div>
+       
+            </section>
+        
             <div>
             <img src='https://media.istockphoto.com/id/615883260/photo/difficult-doesnt-mean-impossible.jpg?s=612x612&w=0&k=20&c=cAEJvjTFRuF9H9gRov1Aj4X4I6xV6DSvMwWsf-2IW-0=' alt="hero-banner" className="hero-banner-img" />
             </div>
