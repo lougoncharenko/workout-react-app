@@ -1,16 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import { exerciseOptions, fetchData } from '../scripts/fetchData';
 import '../styles/searchExercises.css'
-
-const options = [
-  { value: 'band', label: 'Band' },
-  { value: 'barbell', label: 'Barbell' },
-  { value: 'body weight', label: 'Body Weight' },
-	{ value: 'cable', label: 'Cable' },
-	{ value: 'dumbbell', label: 'Dumbbell' },
-	{ value: 'kettlebell', label: 'kettlebell' },
-]  
 
 const SearchExercises = () => {
   const [search, setSearch] = useState<string>('')
