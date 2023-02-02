@@ -1,25 +1,29 @@
 import React, { useState } from 'react';
 
 import { exerciseOptions, fetchData } from '../scripts/fetchData';
-import '../styles/searchExercises.css'
+import '../styles/searchExercises.css';
 
-const SearchExercises = () => {
-  const [search, setSearch] = useState<string>('')
-	const [type, setType] = useState<string>('')
-	const [exercises, setExercises] = useState([]);
+// fix later
+type SearchExercisesTypes = {
+	setExercises: any
+}
+
+const SearchExercises = ({ setExercises }:SearchExercisesTypes ) => {
+  const [search, setSearch] = useState<string>('');
+	const [type, setType] = useState<string>('');
 
   const handleSearch = async () => {
-    console.log(search)
-		console.log(type)
+    console.log(search);
+		console.log(type);
       if (search)  {
         const exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
 				const searchedExercises = exercisesData.filter(
 					(item:any) => item.name.toLowerCase().includes(search)
 					&& item.equipment.toLowerCase().includes(type)
 				)
-        console.log(searchedExercises)
-				console.log(searchedExercises[1])
-				setSearch('')
+        console.log(searchedExercises);
+				setSearch('');
+				setExercises(searchedExercises);
 			}	
     }
 
