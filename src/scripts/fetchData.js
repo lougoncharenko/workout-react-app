@@ -1,7 +1,3 @@
-// list of all exercisers 
-
-const MY_KEY = process.env.REACT_APP_RAPID_API_KEY
-
 export const exerciseOptions = {
 	method: 'GET',
 	headers: {
