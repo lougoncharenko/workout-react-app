@@ -3,17 +3,35 @@ import React, { useEffect, useState } from 'react';
 import { exerciseOptions, fetchData } from '../scripts/fetchData';
 import '../styles/searchExercises.css'
 
+const options = [
+  { value: 'band', label: 'Band' },
+  { value: 'barbell', label: 'Barbell' },
+  { value: 'body weight', label: 'Body Weight' },
+	{ value: 'cable', label: 'Cable' },
+	{ value: 'dumbbell', label: 'Dumbbell' },
+	{ value: 'kettlebell', label: 'kettlebell' },
+]  
+
 const SearchExercises = () => {
   const [search, setSearch] = useState<string>('')
+	const [type, setType] = useState<string>('')
+	const [exercises, setExercises] = useState([]);
 
-    
   const handleSearch = async () => {
     console.log(search)
-      // if (search)  {
-      //   const exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
-      // }
-			setSearch('')
+		console.log(type)
+      if (search)  {
+        const exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
+				const searchedExercises = exercisesData.filter(
+					(item:any) => item.name.toLowerCase().includes(search)
+					&& item.equipment.toLowerCase().includes(type)
+				)
+        console.log(searchedExercises)
+				console.log(searchedExercises[1])
+				setSearch('')
+			}	
     }
+
    return (
     <section className='search-container'>
         <div className='heading'>Search for Exercises:</div>
@@ -24,6 +42,18 @@ const SearchExercises = () => {
           placeholder="Search Exercises"
           onChange={(e) => setSearch(e.target.value.toLowerCase())}
           />
+					<select
+					onChange={(e) => setType(e.target.value.toLowerCase())}
+					value = {type}
+					>
+						<option>Please choose one option</option>
+						<option value= "Band"> Band </option>
+						<option value= "Barbell"> Barbell </option>
+						<option value = 'body weight'> Body Weight </option>
+						<option value = 'cable'> Cable </option>
+						<option value = 'dumbbell'> Dumbbell </option>
+						<option value = 'kettlebell'> Kettlebell </option>
+					</select>
           <button
           onClick={handleSearch}
           >Search</button>
