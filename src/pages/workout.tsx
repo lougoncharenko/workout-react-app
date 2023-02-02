@@ -6,6 +6,10 @@ export default function Workout() {
   const [exercises, setExercises] = useState([]);
 
     return (
-      <SearchExercises setExercises={setExercises}/>
+      <section className='workout-container'> 
+         <SearchExercises setExercises={setExercises}/>
+      {/* // <Exercises setExercises={setExercises} exercises={exercises}  /> */}
+      </section>
+   
     )
   }
