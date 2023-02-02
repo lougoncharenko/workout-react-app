@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import SearchExercises from '../components/searchbar';
+import Exercises from '../components/exercise';
 
 export default function Workout() {
   const [exercises, setExercises] = useState([]);
@@ -8,7 +9,7 @@ export default function Workout() {
     return (
       <section className='workout-container'> 
          <SearchExercises setExercises={setExercises}/>
-      {/* // <Exercises setExercises={setExercises} exercises={exercises}  /> */}
+      <Exercises setExercises={setExercises} exercises={exercises}  /> 
       </section>
    
     )
