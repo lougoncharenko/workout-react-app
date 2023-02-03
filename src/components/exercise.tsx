@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Pagination from '@mui/material/Pagination';
-import { Box, Stack, Typography } from '@mui/material';
-import { exerciseOptions, fetchData } from '../scripts/fetchData';
+import { Box, Stack } from '@mui/material';
 import ExerciseCard from './exerciseCard';
 
 type ExercisesTypes = {
@@ -10,7 +9,7 @@ type ExercisesTypes = {
 }
 
 const Exercises = ({ exercises, setExercises }: ExercisesTypes) => { 
-    const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
   const [exercisesPerPage] = useState(6);
   // Pagination
   const indexOfLastExercise = currentPage * exercisesPerPage;
