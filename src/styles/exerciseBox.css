@@ -19,3 +19,14 @@
     font-weight: bold;
     color: darkred;
 }
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.add {
+    margin-top: 20px;
+    padding: 15px;
+    background-color:  green;
+}
