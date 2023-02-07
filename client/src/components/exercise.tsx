@@ -3,6 +3,7 @@ import Pagination from '@mui/material/Pagination';
 import { Box, Stack } from '@mui/material';
 import ExerciseCard from './exerciseCard';
 import { InfinitySpin } from 'react-loader-spinner';
+import Loader from './loader';
 
 type ExercisesTypes = {
     exercises:  any;
@@ -23,7 +24,7 @@ const Exercises = ({ exercises, setExercises }: ExercisesTypes) => {
     window.scrollTo({ top: 1800, behavior: 'smooth' });
   };
 
-  if (!currentExercises.length) return <InfinitySpin />; 
+  if (!currentExercises.length) return <Loader />; 
 
     return (
         <Box id="exercises" sx={{ mt: { lg: '109px' } }} mt="50px" p="20px">
