@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Workout from './pages/workout';
-import Articles from './pages/articles';
+import WorkoutPlan from './pages/myworkoutplan';
 import { Route, Routes } from "react-router-dom"
 
 function App() {
@@ -22,8 +22,8 @@ function App() {
       <div className="container">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/workout" element={<Workout setData={setData}/>} />
-          <Route path="/articles" element={<Articles data={data}/>} />
+          <Route path="/search" element={<Workout setData={setData} />} />
+          <Route path="/plan" element={<WorkoutPlan data={data}  />} />
         </Routes>
       </div>
     

@@ -9,8 +9,8 @@ export default function Navbar() {
       </Link>
       <ul>
       <CustomLink to="/">Home</CustomLink>
-        <CustomLink to="/workout">Workout Logger</CustomLink>
-        <CustomLink to="/articles">Fitness Articles</CustomLink>
+        <CustomLink to="/search">Search Exercises</CustomLink>
+        <CustomLink to="/plan">Workout Plan</CustomLink>
       </ul>
     </nav>
   )

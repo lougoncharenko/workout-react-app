@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import '../styles/exerciseBox.css';
 
 // fix type later
@@ -7,12 +7,19 @@ type ExersciseCardProps = {
 }
 
 const ExerciseCard = ({ exercise }: ExersciseCardProps) => {
-const [workoutplan, setWorkoutplan] = useState([])
+const [workoutplan, setWorkoutplan] = useState([{}])
+
+// useEffect(()=> {
+//     async function sendData() {
+//     const res = await fetch("http://localhost:3001//data", {mode: "cors"})
+//     const json = await res.json() 
+//     setData(json)
+// } sendData()
+// }, [])
 
 const handleClick = () => {
-setWorkoutplan(exercise.name)
+setWorkoutplan(exercise)
 console.log(workoutplan)
-console.log()
 }
 return (
   <section className='exercise-section'>

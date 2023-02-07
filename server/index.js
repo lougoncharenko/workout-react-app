@@ -13,7 +13,7 @@ app.get("/api", (req, res) => {
     res.json({ message: "Hello from server!" });
   });
 
-  app.post('/api/stuff', (req, res, next) => {
+  app.post('/data', (req, res, next) => {
     console.log(req.body);
     res.status(201).json({
       message: 'Thing created successfully!'

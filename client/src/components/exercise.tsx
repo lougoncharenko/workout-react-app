@@ -30,7 +30,7 @@ const Exercises = ({ exercises, setExercises }: ExercisesTypes) => {
         <Box id="exercises" sx={{ mt: { lg: '109px' } }} mt="50px" p="20px">
           <Stack direction="row" sx={{ gap: { lg: '107px', xs: '50px' } }} flexWrap="wrap" justifyContent="center">
             {currentExercises.map((exercise:string, idx:number) => (
-              <ExerciseCard key={idx} exercise={exercise} />
+              <ExerciseCard key={idx} exercise={exercise}/>
             ))}
           </Stack>
           <div>
