@@ -15,16 +15,8 @@ const [workoutplan, setWorkoutplan] = useState({
 	target: exercise.target
 })
 
-// useEffect(()=> {
-//     async function sendData() {
-//     const res = await fetch("http://localhost:3001//data", {mode: "cors"})
-//     const json = await res.json() 
-//     setData(json)
-// } sendData()
-// }, [])
-
 const handleClick = () => {
-console.log("hello")
+	console.log("hello")
 setWorkoutplan(prevExercise => {
 	return {
 		...prevExercise,
@@ -38,8 +30,16 @@ const newExercise = {
     bodypart: exercise.bodyPart,
     target: exercise.target
 }
-axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
-axios.post('http://localhost:3001/create', newExercise)
+fetch('http://localhost:3001/create', {
+  method: "POST",
+  body: JSON.stringify(newExercise),
+  headers: {"Content-type": "application/json; charset=UTF-8"}
+})
+.then(response => response.json()) 
+.then(json => console.log(json));
+
+// axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+// axios.post('http://localhost:3001/create', newExercise)
 
 
 }

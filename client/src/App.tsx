@@ -12,7 +12,7 @@ function App() {
 
   useEffect(()=> {
     async function fetchData() {
-    const res = await fetch("http://localhost:3001//data", {mode: "cors"})
+    const res = await fetch("http://localhost:3001/data", {mode: "cors"})
     const json = await res.json() 
     setData(json)
 } fetchData()
