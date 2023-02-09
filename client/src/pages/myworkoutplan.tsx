@@ -1,10 +1,13 @@
 import React from 'react';
+import ExerciseCard from '../components/exerciseCard';
 
   export default function WorkoutPlan({data}) {
     
     return (
       <>
-     <div>{data === null? null: data.message}</div>
+     {data === null? null: data.map((exercise:string, idx:number) => 
+      <ExerciseCard key={idx} exercise={exercise}/>
+      )}
      </>
     )
   }

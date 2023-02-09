@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Pagination from '@mui/material/Pagination';
 import { Box, Stack } from '@mui/material';
 import ExerciseCard from './exerciseCard';
-import { InfinitySpin } from 'react-loader-spinner';
 import Loader from './loader';
 
 type ExercisesTypes = {

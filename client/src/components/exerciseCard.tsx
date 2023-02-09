@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import '../styles/exerciseBox.css';
+import axios from "axios"
 
 // fix type later
 type ExersciseCardProps = {
@@ -7,7 +8,12 @@ type ExersciseCardProps = {
 }
 
 const ExerciseCard = ({ exercise }: ExersciseCardProps) => {
-const [workoutplan, setWorkoutplan] = useState([{}])
+const [workoutplan, setWorkoutplan] = useState({
+	name: exercise.name,
+	gif: exercise.gifUrl,
+	bodyPart: exercise.bodyPart,
+	target: exercise.target
+})
 
 // useEffect(()=> {
 //     async function sendData() {
@@ -18,8 +24,24 @@ const [workoutplan, setWorkoutplan] = useState([{}])
 // }, [])
 
 const handleClick = () => {
-setWorkoutplan(exercise)
+console.log("hello")
+setWorkoutplan(prevExercise => {
+	return {
+		...prevExercise,
+		exercise
+	}
+})
 console.log(workoutplan)
+const newExercise = {
+	name: exercise.name,
+    gifUrl: exercise.gifUrl,
+    bodypart: exercise.bodyPart,
+    target: exercise.target
+}
+axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+axios.post('http://localhost:3001/create', newExercise)
+
+
 }
 return (
   <section className='exercise-section'>
